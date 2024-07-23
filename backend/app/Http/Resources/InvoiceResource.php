@@ -17,7 +17,8 @@ class InvoiceResource extends JsonResource
         return [
             'invoiceDate'=> $this->InvoiceDate,
             'totalAmount'=> $this->TotalAmount,
-            'date'=>$this->created_at
+            'date'=>$this->created_at,
+            'customer'=>$this->customer->name
         ];
     }
 }

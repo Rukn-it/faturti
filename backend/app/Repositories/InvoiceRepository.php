@@ -12,7 +12,7 @@ class InvoiceRepository implements InvoiceRepositoryInterface
      */
     public  function index(){
             
-        return Invoice::all();
+        return Invoice::get();
     }
     public function userInvoices($id){
 
@@ -21,7 +21,9 @@ class InvoiceRepository implements InvoiceRepositoryInterface
         return Invoice::create($data);
     }
     public function update(array $data,$id){
-        
+        $invoice = Invoice::find($id);
+        $invoice->update($data);
+        return $invoice;
     }
 }
 

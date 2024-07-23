@@ -42,4 +42,21 @@ class InvoiceController extends Controller
             return ApiResponseClass::rollback($e);
         }
     }
+
+    public function update(Request $request , $id){
+        $data = $request->validate([
+            'customer_id'=>"required",
+            'InvoiceDate'=>"required",
+            'TotalAmount'=>"required"
+        ]);
+        DB::beginTransaction();
+    try{
+        $invoice = $this->invoiceRepositoryInterface->update($data,$id);
+        DB::commit();
+        return ApiResponseClass::sendResponse($invoice,'Customer updated Successful', 200);
+
+    }catch(\Exception $e){
+        return ApiResponseClass::rollback($e);
+    }
+    }
 }
