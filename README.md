@@ -8,4 +8,6 @@
   <li> make file .env </li>
   <li> go to the .env.example and copy all elements to .env file</li>
   <li> make the conniction with your local database  </li>
+    <li> run this command // php artisan migrate:fresh // </li>
+   <li> run this command // php artisan db:seed // to add fake data to the database  </li>
 </ul>
