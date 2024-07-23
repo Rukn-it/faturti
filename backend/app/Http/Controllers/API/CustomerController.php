@@ -31,7 +31,7 @@ class CustomerController extends Controller
         $data = $request->validate([
             'name' => 'required',
             'phone' => 'required',
-            'email' => 'required'
+            'address' => 'required',
         ]);
         DB::beginTransaction();
         try {
@@ -43,13 +43,24 @@ class CustomerController extends Controller
             return ApiResponseClass::rollback($ex);
         }
     }
+
+    public function show($id){
+        try{
+            $customer = $this->customerRepositoryInterface->getById($id);
+            return ApiResponseClass::sendResponse($customer,'customer retreved successfly',200);
+        }catch(\Exception $e){
+            return ApiResponseClass::rollback($e);
+        }
+
+
+    }
     public function update(Request $request, $id)
     {
         $data = $request->validate(
             [
                 'name' => 'required',
                 'phone' => 'required',
-                'email' => 'required'
+                'address' => 'required',
             ]);
         DB::beginTransaction();
         try {
@@ -60,4 +71,13 @@ class CustomerController extends Controller
             return ApiResponseClass::rollback($e);
         }
     }
+
+    public function destroy($id)
+    {
+         $this->customerRepositoryInterface->delete($id);
+
+        return ApiResponseClass::sendResponse('customer Delete Successful','',204);
+    }
+
+
 }

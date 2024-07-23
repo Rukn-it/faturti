@@ -7,11 +7,11 @@ use App\Models\Customer;
 class CustomerRepository implements CustomerRepositoryInterface
 {
     public function index(){
-        // return Customer::all();
+        return Customer::all();
     }
 
     public function getById($id){
-    //    return Customer::findOrFail($id);
+       return Customer::findOrFail($id);
     }
 
     public function store(array $data){
@@ -19,12 +19,12 @@ class CustomerRepository implements CustomerRepositoryInterface
     }
 
     public function update(array $data,$id){
-    //     $customet = Customer::find($id);
-    //     $customet->update($data);
-    //    return $customet;
+        $customet = Customer::find($id);
+        $customet->update($data);
+       return $customet;
     }
     
     public function delete($id){
-    //    Customer::destroy($id);
+       Customer::destroy($id);
     }
 }
