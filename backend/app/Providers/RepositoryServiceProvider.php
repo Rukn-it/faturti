@@ -18,7 +18,6 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(CustomerRepositoryInterface::class , CustomerRepository::class);
         $this->app->bind(InvoiceRepositoryInterface::class , InvoiceRepository::class);
     }
-
     /**
      * Bootstrap services.
      */

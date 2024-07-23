@@ -17,3 +17,4 @@ Route::apiResource('/showCustomer',CustomerController::class);
 
 Route::apiResource('/invoices',InvoiceController::class);
 Route::apiResource('/storeInvoice',InvoiceController::class);
+Route::apiResource('/updateInvoice',InvoiceController::class);
