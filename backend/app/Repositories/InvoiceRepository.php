@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Repositories;
-use App\Interfaces\interfaces\InvoiceRepositoryInterface;
+use App\Interfaces\InvoiceRepositoryInterface;
 use App\Models\Customer;
 use App\Models\Invoice;
 

@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use App\Interfaces\CustomerRepositoryInterface;
-use App\Interfaces\interfaces\InvoiceRepositoryInterface;
+use App\Interfaces\InvoiceRepositoryInterface;
 use App\Repositories\CustomerRepository;
 use App\Repositories\InvoiceRepository;
 use Illuminate\Support\ServiceProvider;
