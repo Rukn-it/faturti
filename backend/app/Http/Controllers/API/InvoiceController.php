@@ -5,7 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Classes\ApiResponseClass;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\InvoiceResource;
-use App\Interfaces\interfaces\InvoiceRepositoryInterface;
+use App\Interfaces\InvoiceRepositoryInterface;
 use App\Repositories\InvoiceRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
