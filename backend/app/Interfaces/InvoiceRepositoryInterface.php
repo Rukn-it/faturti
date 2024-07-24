@@ -8,4 +8,5 @@ interface InvoiceRepositoryInterface
     public function userInvoices($id);
     public function store(array $data);
     public function update(array $data,$id);
+    public function getInvoiceItems($id);
 }
