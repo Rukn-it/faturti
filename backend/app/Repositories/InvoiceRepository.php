@@ -4,6 +4,7 @@ namespace App\Repositories;
 use App\Interfaces\InvoiceRepositoryInterface;
 use App\Models\Customer;
 use App\Models\Invoice;
+use App\Models\InvoiceItem;
 
 class InvoiceRepository implements InvoiceRepositoryInterface
 {
@@ -24,6 +25,10 @@ class InvoiceRepository implements InvoiceRepositoryInterface
         $invoice = Invoice::find($id);
         $invoice->update($data);
         return $invoice;
+    }
+    public function getInvoiceItems($invoiceId)
+    {
+        return InvoiceItem::where('invoice_id', $invoiceId)->get();
     }
 }
 
