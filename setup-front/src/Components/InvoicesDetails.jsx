@@ -2,7 +2,7 @@ import { TbTrash } from 'react-icons/tb';
 import { MdEdit } from 'react-icons/md';
 
 import Invoices from '../assets/Invoices';
-const InvoicesDetails = () => {
+const InvoicesDetails = ({onEdit,onDelete}) => {
 
     return (
         <div className='mx-auto max-w-[1440px] px-6 lg:px-20 pt-20'>
@@ -37,12 +37,12 @@ const InvoicesDetails = () => {
                             <td className='w-16 h-16 bg-white'>{e.total_amount}</td>
                             <td>
                                 <div className='bold-22 pl-14'>
-                                    <MdEdit onClick={() => { }} />
+                                    <MdEdit onClick={onEdit} />
                                 </div>
                             </td>
                             <td>
                                 <div className='bold-22 pl-14'>
-                                    <TbTrash onClick={() => { }} />
+                                    <TbTrash onClick={onDelete} />
                                 </div>
                             </td>
 

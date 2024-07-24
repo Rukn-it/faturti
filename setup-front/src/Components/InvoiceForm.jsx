@@ -1,22 +1,57 @@
-const InvoiceForm = () => (
-    <div className="bg-white p-6 rounded shadow-md mt-6 w-full max-w-md mx-auto">
-      <h2 className="text-xl font-bold mb-4">Add Invoice</h2>
-      <form>
-        <label className="block mb-2">
-          Customer Name:
-          <input type="text" name="customerName" className="block w-full p-2 border rounded mt-1" />
-        </label>
-        <label className="block mb-2">
-          Invoice Date:
-          <input type="date" name="invoiceDate" className="block w-full p-2 border rounded mt-1" />
-        </label>
-        <label className="block mb-2">
-          Total Amount:
-          <input type="number" name="totalAmount" className="block w-full p-2 border rounded mt-1" />
-        </label>
-        <button type="submit" className="bg-slate-800 text-white px-4 py-2 rounded hover:bg-slate-700 mt-4">Submit</button>
-      </form>
-    </div>
-  );
+import { MdClose } from 'react-icons/md';
 
-  export default InvoiceForm;
+
+const InvoiceForm = ({ InvoiceInfo, type, fetchInvoices, onClose, showToastNotifying }) => {
+  return <>
+    <div className='relative  border-t-4 border-t-gray-800'>
+
+      <button className='w-8 h-8 rounded-full flex items-center justify-center absolute -left-6 -top-8 hover:text-slate-950 ' onClick={onClose}>
+        <MdClose className='text-xl text-slate-400 self-center mb-2' />
+      </button>
+
+      <div className='flex flex-col gap-2 p-2 mt-8'>
+
+        <label className='input-label text-xl font-medium'>Customer Id</label>
+        <input
+          type='text'
+          className='text-xs text-slat-950 outline-none mb-3'
+          placeholder='Enter customer id'
+          value={''}
+          onChange={() => {}}
+        />
+      </div>
+      <div className='flex flex-col gap-2 p-2'>
+
+        <label className='input-label text-xl font-medium'>Invoice Date</label>
+        <input
+          type='date'
+          className='text-xs text-slat-950 outline-none mb-3'
+          placeholder='Enter Invoice Date'
+          value={''}
+          onChange={() => {}}
+        />
+      </div>
+      <div className='flex flex-col gap-2 p-2'>
+
+        <label className='input-label text-xl font-medium'>Total Amount</label>
+        <input
+          type='text'
+          className='text-xs text-slat-950 outline-none mb-3'
+          placeholder='Enter Total Amount'
+          value={''}
+          onChange={() => {}}
+        />
+      </div>
+
+      {/* {error && <p className='text-red-500 text-xs pt-4'>{error}</p>} */}
+
+      <button className='w-full btn-primary font-medium mt-5 p-3 text-slate-800 border border-slate-800' onClick={()=>{}}>
+        {type === 'add' ? 'Add' : 'Edit'}
+      </button>
+    </div>
+    
+  </>
+
+};
+
+export default InvoiceForm;
