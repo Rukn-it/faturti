@@ -16,7 +16,7 @@ const Toast = ({ isShown, message, type, onClose }) => {
   }, [onClose]);
 
   return <>
-    <div className={`absolute right-24 bottom-8 transition-all duration-500 ${isShown ? "opacity-100" : "opacity-0"}`}>
+    <div className={`absolute right-24 bottom-8 transition-all duration-500 border-l-4 border-l-gray-800 ${isShown ? "opacity-100" : "opacity-0"}`}>
       <div className={`min-w-52 bg-white border shadow-2xl rounded-md after:w-[5px] after:h-full ${type === 'delete' ? "bg-red-50" : "bg-green-50"} after:absolute after:left-0 after:top-0 after:rounded-l-lg`}>
         <div className='flex items-center gap-3 py-2 px-4'>
           <div

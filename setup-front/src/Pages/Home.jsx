@@ -38,9 +38,9 @@ const Home = () => {
     });
   };
   // make a model => edit
-  const editHandller = (taskInfo) => {
+  const editHandller = (invoiceInfo) => {
 
-    setShowForm({ isShown: true, data: taskInfo, type: 'edit' })
+    setShowForm({ isShown: true, data: invoiceInfo, type: 'edit' })
   }
 
     // when click close button switch add model
@@ -84,6 +84,7 @@ const Home = () => {
           fetchTasks={()=>{}}
           onClose={onClose}
           showToastNotifying={showToastNotifying}
+          
         />
       </Modal>
 
