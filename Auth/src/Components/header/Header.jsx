@@ -5,6 +5,20 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 function Header() {
+<<<<<<< HEAD
+=======
+  window.addEventListener("scroll", () => {
+    let isAuthenticated = localStorage.getItem("isAuthenticated");
+    if (isAuthenticated=="") {
+      const header = document.getElementsByClassName("header")[0];
+      header.classList.toggle("active", window.scrollY > 200);
+    }
+
+    //{console.log(document.body.scrollHeight)}
+  });
+  // window.scrollTo({top:document.body.scrollHeight,behavior:"smooth"})
+
+>>>>>>> auth
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const dispatch=useDispatch()
   return (

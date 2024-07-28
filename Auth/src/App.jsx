@@ -3,6 +3,9 @@ import {  Routes ,Route} from "react-router-dom"
 import Register from './Components/header/Header';
 import Login from './Components/header/Header';
 import Home from './Components/header/Header';
+import Register from './Components/register/Register'
+import Login from './Components/login/Login';
+import Home from './Components/Home';
 import Header from './Components/header/Header';
 function App() {
 
