@@ -1,13 +1,21 @@
-import './App.css'
-function App() {
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Home from './Pages/Home';
 
-  return (
-    <>
-      <h1 className="text-3xl font-bold underline">
-         All Works!
-      </h1>
-    </>
-  )
-}
 
-export default App
+const routes = (
+  <Router>
+    <Routes>
+      <Route path="/" element={<Navigate to="/home" />} />
+      <Route path='/home' exact element={<Home />} />
+      <Route path='/login' exact element={''} />
+      <Route path='/signup' exact element={''} />
+    </Routes>
+  </Router>
+);
+
+const App = () => {
+  return <div>{routes}</div>
+
+};
+
+export default App;
